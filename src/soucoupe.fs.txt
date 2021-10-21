@@ -1,0 +1,17 @@
+#version 330
+
+uniform sampler2D tex;
+uniform vec3 Color;
+
+varying vec4 verpos;
+
+in vec3 pos;
+
+out vec4 fragColor;
+
+void main()
+{
+  vec4 t = texture(tex, vec2(pos.x/5., pos.y/5.+.5));
+
+  fragColor = vec4(t.xyz * 0.7, 1.);
+}

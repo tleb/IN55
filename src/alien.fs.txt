@@ -1,0 +1,15 @@
+#version 330
+
+uniform sampler2D texID1;
+uniform float t;
+
+in vec3 pos;
+
+varying vec4 verpos;
+out vec4 fragColor;
+
+void main()
+{
+
+  fragColor = texture(texID1, vec2(pos.x/3., -.3+pos.z/3.));
+}
